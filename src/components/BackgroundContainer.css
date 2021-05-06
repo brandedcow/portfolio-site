@@ -1,0 +1,14 @@
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  background-size: cover;
+  filter: blur(10px);
+}
+
+.containerContent {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}

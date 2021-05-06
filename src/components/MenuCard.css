@@ -1,0 +1,17 @@
+.menuCard {
+  width: 29vw;
+  height: 20vh;
+  background-color: #8ba6a9;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+
+  transition: background-color 1s, box-shadow 0.2s;
+}
+
+.menuCard:hover {
+  background-color: #a1b7ba;
+  box-shadow: 0 0 0 8px#c4d2d4;
+}

@@ -1,0 +1,13 @@
+Easy to access contact info: email, location
+
+Contact Page
+Downloadable Resume
+Socials: Linkedin, Github
+
+Small Objective Statement
+
+Ideas
+- Get recent projects from Github, show on project list
+- Create page to track visitors of site
+- Gamify site somehow
+- Bookshelf of things to read
