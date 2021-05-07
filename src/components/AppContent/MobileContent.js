@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import Expandable from "../Expandable";
 
-import ExpandableContainer from "../../components/ExpandableContainer";
 import "./AppContent.css";
 
 function AppContent({ className, routes }) {
   const [contentHeight, setContentHeight] = useState(0);
+
   const location = useLocation();
 
   const handleRenderRoute = (height, component, data) => {
@@ -26,25 +27,26 @@ function AppContent({ className, routes }) {
 
   return (
     <div className={className}>
-      <ExpandableContainer
-        className="appContentContainer"
-        height={contentHeight}
-      >
-        <TransitionGroup>
-          <CSSTransition key={location.key} classNames="fade" timeout={300}>
-            <Switch location={location}>
-              {routes.map(({ path, component, routeHeight, data }) => (
-                <Route
-                  exact
-                  key={path}
-                  path={path}
-                  render={() => handleRenderRoute(routeHeight, component, data)}
-                />
-              ))}
-            </Switch>
-          </CSSTransition>
-        </TransitionGroup>
-      </ExpandableContainer>
+      <Expandable className="appContentContainerMobile" height={contentHeight}>
+        <div>
+          <TransitionGroup>
+            <CSSTransition key={location.key} classNames="fade" timeout={300}>
+              <Switch location={location}>
+                {routes.map(({ path, component, mobileRouteHeight, data }) => (
+                  <Route
+                    exact
+                    key={path}
+                    path={path}
+                    render={() =>
+                      handleRenderRoute(mobileRouteHeight, component, data)
+                    }
+                  />
+                ))}
+              </Switch>
+            </CSSTransition>
+          </TransitionGroup>
+        </div>
+      </Expandable>
     </div>
   );
 }

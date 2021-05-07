@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { Container } from "semantic-ui-react";
 
-import ExpandableContainer from "../../components/ExpandableContainer";
+import ExpandableContainer from "../Expandable";
 import "./AppContent.css";
 
 function AppContent({ className, routes }) {
@@ -30,20 +31,24 @@ function AppContent({ className, routes }) {
         className="appContentContainer"
         height={contentHeight}
       >
-        <TransitionGroup>
-          <CSSTransition key={location.key} classNames="fade" timeout={300}>
-            <Switch location={location}>
-              {routes.map(({ path, component, routeHeight, data }) => (
-                <Route
-                  exact
-                  key={path}
-                  path={path}
-                  render={() => handleRenderRoute(routeHeight, component, data)}
-                />
-              ))}
-            </Switch>
-          </CSSTransition>
-        </TransitionGroup>
+        <Container>
+          <TransitionGroup>
+            <CSSTransition key={location.key} classNames="fade" timeout={300}>
+              <Switch location={location}>
+                {routes.map(({ path, component, routeHeight, data }) => (
+                  <Route
+                    exact
+                    key={path}
+                    path={path}
+                    render={() =>
+                      handleRenderRoute(routeHeight, component, data)
+                    }
+                  />
+                ))}
+              </Switch>
+            </CSSTransition>
+          </TransitionGroup>
+        </Container>
       </ExpandableContainer>
     </div>
   );
