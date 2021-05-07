@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import ExpandableContainer from "../components/ExpandableContainer";
+import ExpandableContainer from "../../components/ExpandableContainer";
 import "./AppContent.css";
 
 function AppContent({ className, routes }) {

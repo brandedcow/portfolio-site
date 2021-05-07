@@ -2,10 +2,16 @@ import { Link } from "react-router-dom";
 import { Container, Header, Menu } from "semantic-ui-react";
 import "./AppHeader.css";
 
-function AppHeader({ routes }) {
+function AppHeader({ routes, mobile = false }) {
+  const headerStyles = {
+    display: "flex",
+    flexDirection: "row",
+    justifyContet: "space-between",
+  };
+
   return (
     <Container>
-      <Header size="huge">
+      <Header size="huge" style={headerStyles}>
         <div>
           <Header.Content>
             <Link to="/">Chris Kang</Link>
@@ -13,11 +19,11 @@ function AppHeader({ routes }) {
           <Header.Subheader>Web Developer</Header.Subheader>
         </div>
 
-        <Menu>
+        <Menu compact>
           {routes
             .filter((route) => route.path !== "/")
             .map(({ name, path }) => (
-              <Menu.Item key={name}>
+              <Menu.Item width={2} key={name}>
                 <Link to={path}>{name}</Link>
               </Menu.Item>
             ))}

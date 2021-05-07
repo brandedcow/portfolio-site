@@ -45,12 +45,12 @@ function About({ style }) {
       <p style={textStyle}>
         My background in computer science has let me dip my toes into alot of
         different programming languages (such as Java, C, C++, MySQL) and
-        philosophies (such as OOP, functional). This helps me break down
+        philosophies (such as functional and OOP). This helps me break down
         problems and view things from different angles. In addition, it builds
         on my innate desire to make things more efficient or optimized.
       </p>
       <p style={textStyle}>
-        I'm a result oriented person, and think there is always a way to make
+        I am a result oriented person, and know there is always a way to make
         things happen. Currently based in the Bay Area, and always looking for
         new projects.
       </p>
